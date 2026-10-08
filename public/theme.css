@@ -47,3 +47,9 @@
 .rec p{font-style:italic;color:var(--ink);margin:0 0 8px}
 .rec cite{font-style:normal;font-size:.86rem;color:var(--ink-3)}
 .player{background:linear-gradient(135deg,var(--accent-2),var(--butter),var(--accent))}
+
+/* open source */
+.oss-more{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;color:var(--ink-2);font-size:.92rem;text-align:center}
+.issue h3 .tag{font-size:.72rem}
+.issue h3 span:first-child{overflow-wrap:anywhere}
+@media (max-width:760px){.oss{grid-template-columns:1fr}}

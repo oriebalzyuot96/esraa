@@ -1,0 +1,19 @@
+---
+import { OSS, PERSON } from '../../data/profile';
+const lang = Astro.currentLocale === 'ar' ? 'ar' : 'en';
+const L = (o: Record<string, string>) => o[lang];
+---
+<section class="sec" id="oss" aria-labelledby="ossT">
+  <div class="wrap">
+    <div class="sec-title reveal"><span class="kicker">{L(OSS.k)}</span><h2 id="ossT">{L(OSS.t)}</h2><p>{L(OSS.p)}</p></div>
+    <div class="oss">
+      {OSS.items.map(r => (
+        <a class="card issue spot reveal" href={`${PERSON.github}/${r.name}`} target="_blank" rel="noopener">
+          <span class="lib" aria-hidden="true">{r.icon}</span>
+          <div><h3><span class="ltr">{r.short}</span><span class="tag ltr">{r.lang}</span>{r.star > 0 && <span class="ltr" style="color:var(--accent)">★ {r.star}</span>}</h3><p>{r[lang]}</p></div>
+        </a>
+      ))}
+    </div>
+    <p class="oss-more reveal"><span>{L(OSS.forks)}</span> <a class="btn" href={`${PERSON.github}?tab=repositories`} target="_blank" rel="noopener">{L(OSS.all)}</a></p>
+  </div>
+</section>

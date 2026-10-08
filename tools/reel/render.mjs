@@ -18,7 +18,7 @@ await page.evaluate(() => document.getAnimations().forEach(a => a.pause()));
 const seek = t => page.evaluate(ms => document.getAnimations().forEach(a => { a.currentTime = ms; }), t * 1000);
 
 const ff = spawn('ffmpeg', ['-y', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-',
-  '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-preset', 'slow', '-crf', '20', '-movflags', '+faststart',
+  '-c:v', 'libx264', '-vf', 'scale=in_range=pc:out_range=tv', '-pix_fmt', 'yuv420p', '-color_range', 'tv', '-preset', 'slow', '-crf', '20', '-movflags', '+faststart',
   path.join(assets, 'esraa-intro.mp4')], { stdio: ['pipe', 'inherit', 'inherit'] });
 
 for (let f = 0; f < FPS * DURATION; f++) {

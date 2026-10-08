@@ -36,7 +36,7 @@ export const HERO = {
 };
 
 export const BENTO = {
-  hand: t('hello! 🌍', 'مرحبًا! 🌍'), avail: t('Senior Engineer', 'Senior Engineer'),
+  hand: t('hello! 🐉', 'مرحبًا! 🐉'), avail: t('Senior Engineer', 'Senior Engineer'),
   exp: t('Experience', 'الخبرة'), years: t('years in .NET, from chatbots and e-learning to e-signature', 'سنوات في .NET، من روبوتات المحادثة والتعليم الإلكتروني إلى التوقيع الإلكتروني'),
   nowk: t('Now · Saudi Azm', 'حاليًا · عزم السعودية'),
   now: t('Building integrations for a Saudi e-signature platform and consumer apps', 'أبني التكاملات لمنصة توقيع إلكتروني سعودية وتطبيقات للمستخدمين'),
@@ -92,9 +92,9 @@ export const PROJECTS = {
   items: [
     { id: 'p-contracts', mock: 'shot', img: 'contracts.jpg', url: 'contracts.com.sa', org: t('Saudi Azm · Contracts (CSP)', 'عزم السعودية · عقود (CSP)'), status: t('2023 – now', '2023 – الآن'),
       title: t('Contracts · Contract Signature Platform', 'عقود · منصة توقيع العقود'),
-      p: t('Helps firms get legally signed documents by integrating their own systems with the DMS/CSP and Emdha, Saudi Arabia’s first commercial trust-service provider for digital signatures.',
-           'تساعد الشركات على الحصول على مستندات موقّعة نظاميًا عبر ربط أنظمتها بنظام إدارة الوثائق و CSP وبـ «إمضاء»، أول مزوّد تجاري لخدمات الثقة والتوقيع الرقمي في السعودية.'),
-      hl: [t('Emdha digital-signature and DMS integrations', 'تكاملات التوقيع الرقمي عبر إمضاء وأنظمة إدارة الوثائق'), t('Blazor and ASP.NET Core with SignalR and Hangfire', 'Blazor و ASP.NET Core مع SignalR و Hangfire'), t('POCs and product upgrades across web services', 'إثباتات مفهوم وترقيات للمنتج عبر خدمات الويب')],
+      p: t('A Saudi platform where individuals and companies create, manage and e-sign contracts online. Its CSP lets firms get legally signed documents by integrating their own systems with the DMS and Emdha, Saudi Arabia’s first commercial trust-service provider. I have worked on it since 2023.',
+           'منصة سعودية يُنشئ فيها الأفراد والشركات عقودهم ويديرونها ويوقّعونها إلكترونيًا. وتتيح خدمة CSP للشركات الحصول على مستندات موقّعة نظاميًا عبر ربط أنظمتها بنظام إدارة الوثائق وبـ «إمضاء»، أول مزوّد تجاري لخدمات الثقة في السعودية. أعمل عليها منذ 2023.'),
+      hl: [t('Emdha digital-signature and DMS integrations for company systems', 'تكاملات التوقيع الرقمي عبر إمضاء وأنظمة إدارة الوثائق لأنظمة الشركات'), t('Contract creation, approvals, signing status and notifications', 'إنشاء العقود والموافقات وحالة التوقيع والإشعارات'), t('Blazor and ASP.NET Core with SignalR and Hangfire', 'Blazor و ASP.NET Core مع SignalR و Hangfire'), t('POCs and product upgrades across web services', 'إثباتات مفهوم وترقيات للمنتج عبر خدمات الويب')],
       tags: ['Blazor', 'ASP.NET Core', 'Emdha', 'SignalR'], link: 'https://contracts.com.sa' },
     { id: 'p-whis', mock: 'translate', org: t('Saudi Azm · Whis Book', 'عزم السعودية · Whis Book'), status: t('2024 – now', '2024 – الآن'),
       title: t('Whis Book · translation for everyone', 'Whis Book · ترجمة للجميع'),
@@ -126,6 +126,168 @@ export const PROJECTS = {
            'تبني INTDV ذكاءً اصطناعيًا محادثيًا بالعربية: روبوتات محادثة وأفاتارات رقمية وروبوتات. بنيت خوادم .NET Core 3 لروبوتات المحادثة مع تكاملات IBM Watson لقنوات متعددة.'),
       hl: [t('IBM Watson integration and RabbitMQ messaging', 'تكامل IBM Watson ورسائل RabbitMQ'), t('Design patterns and best practices', 'أنماط التصميم وأفضل الممارسات')],
       tags: ['.NET Core', 'IBM Watson', 'RabbitMQ'] },
+  ],
+};
+
+export const OSS = {
+  k: t('open source', 'مفتوح المصدر'), t: t('On GitHub', 'على GitHub'),
+  p: t('Public repositories, from my graduation project to AI code review and spec-driven .NET 10.', 'مستودعاتي العامة، من مشروع التخرج إلى مراجعة الكود بالذكاء الاصطناعي و .NET 10 المبني على المواصفات.'),
+  all: t('All repositories on GitHub ↗', 'كل المستودعات على GitHub ↗'),
+  forks: t('Also forked: swiplwebtut (SWI-Prolog web) and rosie (AIML 2.0 chatbot base).', 'وأيضًا نسخ مشتقة: swiplwebtut (ويب SWI-Prolog) و rosie (أساس روبوت محادثة AIML 2.0).'),
+  items: [
+    {
+      "name": "crm-ticketing-system",
+      "short": "crm-ticketing-system",
+      "icon": "🎫",
+      "lang": "C# · Blazor",
+      "star": 0,
+      "en": "CRM ticketing platform on .NET 10: Blazor WebAssembly, ASP.NET Core and PostgreSQL, built with spec-driven development. Ticket workflow, role-based auth, 242 passing tests and PR gates for build, test and SDD compliance.",
+      "ar": "منصة تذاكر CRM على .NET 10 بـ Blazor WebAssembly و ASP.NET Core و PostgreSQL، مبنية بالتطوير المعتمد على المواصفات: سير عمل التذاكر، وصلاحيات حسب الدور، و242 اختبارًا ناجحًا، وبوابات PR للبناء والاختبار والامتثال."
+    },
+    {
+      "name": "AICodeReviewer",
+      "short": "AICodeReviewer",
+      "icon": "🤖",
+      "lang": "C# · Ollama",
+      "star": 1,
+      "en": "A local .NET Web API that reviews C# code with LLaMA 3 via Ollama plus Roslyn analysis: summary, issues, suggestions and a quality score for clean code and SOLID.",
+      "ar": "واجهة .NET Web API محلية تراجع كود C# بنموذج LLaMA 3 عبر Ollama مع تحليل Roslyn: ملخص ومشكلات واقتراحات ودرجة جودة وفق الكود النظيف و SOLID."
+    },
+    {
+      "name": "HEAR",
+      "short": "HEAR",
+      "icon": "🤟",
+      "lang": "Kinect · graduation project",
+      "star": 0,
+      "en": "Graduation project: a Microsoft Kinect system that translates sign language into spoken language. Graded Excellent.",
+      "ar": "مشروع التخرج: نظام يستخدم Microsoft Kinect لترجمة لغة الإشارة إلى كلام منطوق. التقدير: ممتاز."
+    },
+    {
+      "name": "CodeExecutor",
+      "short": "CodeExecutor",
+      "icon": "⚡",
+      "lang": "C# · CQRS",
+      "star": 0,
+      "en": "An API to store and execute code snippets, built with CQRS commands and queries (add, execute, list, details). Paired with the Angular 18 UI in CodeExecuter.",
+      "ar": "واجهة برمجية لحفظ مقاطع الكود وتنفيذها بنمط CQRS (إضافة وتنفيذ وعرض وتفاصيل)، مع واجهة Angular 18 في مستودع CodeExecuter."
+    },
+    {
+      "name": "CodeExecuter",
+      "short": "CodeExecuter",
+      "icon": "🖥️",
+      "lang": "TypeScript · Angular 18",
+      "star": 0,
+      "en": "The Angular 18 front end for CodeExecutor.",
+      "ar": "واجهة Angular 18 الأمامية لمشروع CodeExecutor."
+    },
+    {
+      "name": "EncDecPOC",
+      "short": "EncDecPOC",
+      "icon": "🔐",
+      "lang": "C# · .NET 8",
+      "star": 0,
+      "en": "POC that encrypts and decrypts appsettings values with a machine certificate and writes the result back to the same file.",
+      "ar": "إثبات مفهوم لتشفير قيم ملف appsettings وفكّها بشهادة مخزّنة على الجهاز وكتابة النتيجة في الملف نفسه."
+    },
+    {
+      "name": "QRCodePOC",
+      "short": "QRCodePOC",
+      "icon": "🔳",
+      "lang": "C# · Web API",
+      "star": 3,
+      "en": "Web API POC to generate QR codes and read data back from QR images.",
+      "ar": "إثبات مفهوم بواجهة Web API لتوليد رموز QR وقراءة البيانات منها."
+    },
+    {
+      "name": "WebApiCore3",
+      "short": "WebApiCore3",
+      "icon": "🔑",
+      "lang": "C# · .NET Core 3",
+      "star": 3,
+      "en": "ASP.NET Core 3 Web API with register/login tokens and an email notification service.",
+      "ar": "واجهة ASP.NET Core 3 بتسجيل ودخول عبر التوكن وخدمة إشعارات بالبريد الإلكتروني."
+    },
+    {
+      "name": "SignalR-Messanger",
+      "short": "SignalR-Messanger",
+      "icon": "💬",
+      "lang": "JavaScript · SignalR",
+      "star": 2,
+      "en": "A small real-time messenger built with SignalR.",
+      "ar": "تطبيق مراسلة صغير فوري مبني بـ SignalR."
+    },
+    {
+      "name": "DatingApp",
+      "short": "DatingApp",
+      "icon": "💞",
+      "lang": "TypeScript · Angular",
+      "star": 0,
+      "en": "Full-stack dating app practice project with an Angular front end.",
+      "ar": "مشروع تدريبي لتطبيق تعارف بواجهة Angular."
+    },
+    {
+      "name": "Todo-API",
+      "short": "Todo-API",
+      "icon": "✅",
+      "lang": "JavaScript · Node.js",
+      "star": 0,
+      "en": "Todo REST API in Node.js with test cases for every route.",
+      "ar": "واجهة Todo بـ Node.js مع حالات اختبار لكل مسار."
+    },
+    {
+      "name": "DXWand",
+      "short": "DXWand",
+      "icon": "🧪",
+      "lang": "C#",
+      "star": 0,
+      "en": "A C# technical assessment with SQL queries and documented test cases.",
+      "ar": "اختبار تقني بـ C# مع استعلامات SQL وحالات اختبار موثّقة."
+    },
+    {
+      "name": "React-Native-Khrogaty",
+      "short": "React-Native-Khrogaty",
+      "icon": "🗺️",
+      "lang": "React Native",
+      "star": 0,
+      "en": "“Khrogaty”: a React Native app of places, activities and restaurants in Mansoura, Cairo and Alexandria.",
+      "ar": "«خروجاتي»: تطبيق React Native لأماكن وأنشطة ومطاعم في المنصورة والقاهرة والإسكندرية."
+    },
+    {
+      "name": "Repo",
+      "short": "Repo",
+      "icon": "🎓",
+      "lang": "ITI projects",
+      "star": 0,
+      "en": "ITI Professional Developer track: several projects across different technologies.",
+      "ar": "مسار المطوّر المحترف في ITI: عدة مشاريع بتقنيات مختلفة."
+    },
+    {
+      "name": "OdeToFood",
+      "short": "OdeToFood",
+      "icon": "🍽️",
+      "lang": "ASP.NET Core 3.1",
+      "star": 0,
+      "en": "Razor Pages and API controllers on ASP.NET Core 3.1 (Pluralsight fundamentals course).",
+      "ar": "Razor Pages ووحدات تحكم API على ASP.NET Core 3.1 (دورة أساسيات Pluralsight)."
+    },
+    {
+      "name": "Product-Management--Angular-Getting-Started-",
+      "short": "Product-Management",
+      "icon": "📦",
+      "lang": "Angular 12",
+      "star": 0,
+      "en": "Product management app from the Angular getting-started course.",
+      "ar": "تطبيق إدارة منتجات من دورة البدء مع Angular."
+    },
+    {
+      "name": "node-js",
+      "short": "node-js",
+      "icon": "🟩",
+      "lang": "Node.js",
+      "star": 0,
+      "en": "Demos from a Node.js course.",
+      "ar": "أمثلة من دورة Node.js."
+    }
   ],
 };
 
@@ -186,6 +348,7 @@ export const siteCfg = (base: string) => ({
     { id: 'intro', e: '🎬', en: 'Intro video', ar: 'فيديو تعريفي' },
     { id: 'skills', e: '🧰', en: 'Skills', ar: 'المهارات' },
     { id: 'projects', e: '🚀', en: 'Work', ar: 'الأعمال' },
+    { id: 'oss', e: '🐙', en: 'Open source', ar: 'مفتوح المصدر' },
     { id: 'career', e: '🧭', en: 'Career', ar: 'المسيرة المهنية' },
     { id: 'contact', e: '✉️', en: 'Contact', ar: 'تواصل' },
   ],

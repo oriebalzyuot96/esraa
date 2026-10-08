@@ -1,0 +1,119 @@
+---
+import { PROJECTS, PERSON } from '../../data/profile';
+const lang = Astro.currentLocale === 'ar' ? 'ar' : 'en';
+const L = (o: Record<string, string>) => o[lang];
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+---
+<section class="sec" id="projects" aria-labelledby="projT">
+  <div class="wrap">
+    <div class="sec-title reveal"><span class="kicker">{L(PROJECTS.k)}</span><h2 id="projT">{L(PROJECTS.t)}</h2><p>{L(PROJECTS.p)}</p></div>
+    <div class="projects">
+      {PROJECTS.items.map(p => (
+        <article class="card proj spot reveal" id={p.id}>
+          <div class="media">
+            <div class="frame tilt">
+              <div class="bar"><i></i><i></i><i></i><span>{(p as any).url || p.id.replace('p-', '') + ' · app'}</span></div>
+              {p.mock === 'fintech' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="row"><div class="box"><b>Financing requests</b><span class="num">1,248</span><div class="bar-p"><i style="width:74%"></i></div></div><div class="box"><b>Partner banks</b><span class="num">12</span><div class="bar-p"><i style="width:60%"></i></div></div></div>
+                  <div class="offer best"><span class="row" style="align-items:center"><span class="bank" style="background:linear-gradient(135deg,#1f5f99,#87b6dd)"></span><b>Bank A · approved</b></span><span class="chip-s">Best rate</span></div>
+                  <div class="offer"><span class="row" style="align-items:center"><span class="bank" style="background:linear-gradient(135deg,#3f8f86,#a9d6cc)"></span><b>Lender B · in review</b></span><span class="chip-s">Compare</span></div>
+                  <div class="row"><div class="box"><b>Sprint</b><div class="ln a w80"></div><div class="ln w60"></div></div><div class="box"><b>Code review</b><div class="ln w40"></div><div class="ln a w60"></div></div></div>
+                </div>
+              )}
+              {p.mock === 'shot' && <img src={`${base}assets/${(p as any).img}`} alt={L(p.title)} loading="lazy" width="1280" height="800">}
+              {p.mock === 'translate' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="row" style="align-items:center;justify-content:center;gap:6px"><span class="node on">العربية</span><span class="arrow">⇄</span><span class="node on">English</span><span class="arrow">⇄</span><span class="node">🤟 Sign</span><span class="node">🎥 Video</span></div>
+                  <div class="offer best"><span class="row" style="align-items:center"><span class="bank" style="background:linear-gradient(135deg,#c2185b,#f48fb1)"></span><b>Conference · live interpreter</b></span><span class="chip-s">Join</span></div>
+                  <div class="offer"><span class="row" style="align-items:center"><span class="bank" style="background:linear-gradient(135deg,#7b3fa0,#ce93d8)"></span><b>Contract · certified office</b></span><span class="chip-s">Upload</span></div>
+                </div>
+              )}
+              {p.mock === 'order' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="row"><div class="course"><div class="th" style="background:linear-gradient(135deg,#fff1f6,#fde7f0)"></div><div><b>Fresh 1L</b><div class="ln w60"></div></div></div><div class="course"><div class="th" style="background:linear-gradient(135deg,#fbd3e2,#fff1f6)"></div><div><b>Laban</b><div class="ln w40"></div></div></div><div class="course"><div class="th" style="background:linear-gradient(135deg,#fde7f0,#efe4f7)"></div><div><b>Gelato</b><div class="ln w80"></div></div></div></div>
+                  <div class="row" style="align-items:center;justify-content:center;gap:6px"><span class="node on">Ordered</span><span class="arrow">→</span><span class="node on">Paid</span><span class="arrow">→</span><span class="node on">On the way</span><span class="arrow">→</span><span class="node">Delivered</span></div>
+                  <div class="row"><div class="box"><b>ETA</b><span class="num">18 min</span><div class="bar-p"><i style="width:70%"></i></div></div><div class="box"><b>Pay</b><span class="chip-s">SAR</span></div></div>
+                </div>
+              )}
+              {p.mock === 'learn' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="row"><div class="box"><b>Attendance</b><span class="num">96%</span><div class="bar-p"><i style="width:96%"></i></div></div><div class="box"><b>Assessments</b><span class="num">24</span><div class="bar-p"><i style="width:60%"></i></div></div><div class="box"><b>XP · badges</b><span class="num">🏅 8</span><div class="bar-p"><i style="width:80%"></i></div></div></div>
+                  <div class="row"><div class="box"><b>Class 5-B</b><div class="ln a w80"></div><div class="ln w60"></div><div class="ln w40"></div></div><div class="box"><b>Parents</b><div class="ln w60"></div><div class="ln a w40"></div></div></div>
+                </div>
+              )}
+              {p.mock === 'chat' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="offer"><b>👤 أريد تتبع طلبي</b></div>
+                  <div class="offer best"><b>🤖 أكيد! رقم الطلب من فضلك؟</b><span class="chip-s">Watson</span></div>
+                  <div class="offer"><b>👤 #48213</b></div>
+                  <div class="row"><div class="box"><b>Intents</b><span class="num">120</span></div><div class="box"><b>Queue</b><span class="chip-s">RabbitMQ</span></div></div>
+                </div>
+              )}
+              {p.mock === 'travel' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="row" style="align-items:center;justify-content:center;gap:6px"><span class="node on">🏨 Hotels</span><span class="node on">✈️ Flights</span><span class="node">🧳 Packages</span><span class="node on">🕋 Umrah</span></div>
+                  <div class="offer best"><span class="row" style="align-items:center"><span class="bank" style="background:linear-gradient(135deg,#0f766e,#7dd3c0)"></span><b>Makkah · 5★ · 3 nights</b></span><span class="chip-s">Book</span></div>
+                  <div class="offer"><span class="row" style="align-items:center"><span class="bank" style="background:linear-gradient(135deg,#d97706,#f5d08a)"></span><b>CAI → JED · economy</b></span><span class="chip-s">Payfort</span></div>
+                  <div class="row"><div class="box"><b>Providers</b><span class="num">12</span><div class="bar-p"><i style="width:100%"></i></div></div><div class="box"><b>Auth</b><span class="chip-s">JWT</span></div></div>
+                </div>
+              )}
+              {p.mock === 'search' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="row"><div class="box"><b>Provider A</b><div class="bar-p"><i style="width:100%"></i></div></div><div class="box"><b>Provider B</b><div class="bar-p"><i style="width:72%"></i></div></div><div class="box"><b>Provider C</b><div class="bar-p"><i style="width:38%"></i></div></div></div>
+                  <div class="offer best"><span class="row" style="align-items:center"><span class="bank" style="background:linear-gradient(135deg,#0f766e,#7dd3c0)"></span><b>48 results · streaming</b></span><span class="chip-s">SignalR</span></div>
+                  <div class="row"><div class="box"><div class="ln a w80"></div><div class="ln w60"></div><div class="ln w40"></div></div><div class="box"><div class="ln a w60"></div><div class="ln w80"></div><div class="ln w40"></div></div></div>
+                </div>
+              )}
+              {p.mock === 'vas' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="row"><div class="box"><b>Campaigns</b><span class="num">214</span><div class="bar-p"><i style="width:64%"></i></div></div><div class="box"><b>Messages sent</b><span class="num">3.2M</span><div class="bar-p"><i style="width:88%"></i></div></div><div class="box"><b>Delivered</b><span class="num">97%</span><div class="bar-p"><i style="width:97%"></i></div></div></div>
+                  <div class="row"><div class="box"><b>Upload list</b><div class="ln a w60"></div><div class="ln w80"></div></div><div class="box"><b>Schedule</b><div class="ln w40"></div><div class="ln a w80"></div></div></div>
+                </div>
+              )}
+              {p.mock === 'wasl' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="row" style="align-items:center;justify-content:center;gap:6px"><span class="node on">Request</span><span class="arrow">→</span><span class="node on">Offers</span><span class="arrow">→</span><span class="node">Approval</span><span class="arrow">→</span><span class="node">Funded</span></div>
+                  <div class="offer best"><span class="row" style="align-items:center"><span class="bank" style="background:linear-gradient(135deg,#1f5f99,#87b6dd)"></span><b>Home finance · 4.1%</b></span><span class="chip-s">Best offer</span></div>
+                  <div class="offer"><span class="row" style="align-items:center"><span class="bank" style="background:linear-gradient(135deg,#3f8f86,#a9d6cc)"></span><b>Personal finance · 5.3%</b></span><span class="chip-s">Compare</span></div>
+                  <div class="row"><div class="box"><b>Tracking</b><div class="bar-p"><i style="width:66%"></i></div></div><div class="box"><b>SAMA</b><span class="chip-s">Licensed</span></div></div>
+                </div>
+              )}
+              {p.mock === 'lowcode' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="row" style="align-items:center;justify-content:center;gap:6px"><span class="node on">Request</span><span class="arrow">→</span><span class="node">Review</span><span class="arrow">→</span><span class="node">Approve</span><span class="arrow">→</span><span class="node on">Done</span></div>
+                  <div class="row"><div class="box"><b>Form fields</b><div class="ln a w60"></div><div class="ln w80"></div><div class="ln w40"></div></div><div class="box"><b>Rules</b><div class="ln w80"></div><div class="ln a w40"></div></div><div class="box"><b>Preview</b><div class="ln w60"></div><div class="ln w80"></div></div></div>
+                </div>
+              )}
+              {p.mock === 'egov' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="row"><div class="box"><b>e-Services</b><span class="num">36</span><div class="bar-p"><i style="width:82%"></i></div></div><div class="box"><b>Requests today</b><span class="num">2,904</span><div class="bar-p"><i style="width:58%"></i></div></div><div class="box"><b>Payments</b><span class="num">98%</span><div class="bar-p"><i style="width:98%"></i></div></div></div>
+                  <div class="row"><div class="box"><div class="ln a w60"></div><div class="ln w80"></div><div class="ln w40"></div><div class="ln w80"></div></div><div class="box"><div class="ln a w40"></div><div class="ln w60"></div><div class="ln w80"></div><div class="ln w60"></div></div></div>
+                </div>
+              )}
+              {p.mock === 'web' && (
+                <div class="mock" aria-hidden="true">
+                  <div class="row">
+                    <div class="course"><div class="th" style="background:linear-gradient(135deg,#1f5f99,#cfe4f7)"></div><div><b>Product</b><div class="ln w60"></div></div></div>
+                    <div class="course"><div class="th" style="background:linear-gradient(135deg,#3f8f86,#bfe6dc)"></div><div><b>Product</b><div class="ln w40"></div></div></div>
+                    <div class="course"><div class="th" style="background:linear-gradient(135deg,#c08a2b,#f4e2b0)"></div><div><b>Product</b><div class="ln w80"></div></div></div>
+                  </div>
+                  <div class="row"><div class="box"><b>Cart</b><div class="ln a w80"></div><div class="ln w60"></div></div><div class="box"><b>Checkout</b><span class="chip-s">KWD</span></div></div>
+                </div>
+              )}
+              {p.mock !== 'shot' && <span class="illus-note">{L(PROJECTS.illus)}</span>}
+            </div>
+          </div>
+          <div class="p-body">
+            <div class="org"><span>{L(p.org)}</span><span class="pill live"><span class="d"></span><span>{L(p.status)}</span></span></div>
+            <h3>{L(p.title)}</h3>
+            <p>{L(p.p)}</p>
+            <ul class="hl">{p.hl.map(h => <li>{L(h)}</li>)}</ul>
+            <div class="tags">{p.tags.map(tg => <span class="tag">{tg}</span>)}</div>
+            {(p as any).link && <div class="p-actions"><a class="btn" href={(p as any).link} target="_blank" rel="noopener">{lang === 'ar' ? 'زيارة المنصة ↗' : 'Visit platform ↗'}</a></div>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
